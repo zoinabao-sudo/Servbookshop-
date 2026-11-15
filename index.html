@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef"><title>ServBookshop | Books & School Supplies</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">S</span><span>Serv<span class="accent">Bookshop</span><small data-en="Books · Stationery · School essentials" data-ar="كتب · قرطاسية · مستلزمات مدرسية">Books · Stationery · School essentials</small></span></a>
+  <nav><a href="#books" data-en="Books" data-ar="الكتب">Books</a><a href="#about" data-en="About" data-ar="من نحن">About</a><a href="#orders" data-en="Track order" data-ar="تتبع الطلب">Track order</a></nav>
+  <div class="actions"><button id="langBtn" class="quiet">العربية</button><button id="cartBtn" class="cart">Cart <b id="cartCount">0</b></button></div>
+</header>
+<main>
+<section class="hero">
+ <div class="hero-copy"><p class="eyebrow" data-en="YOUR EVERYDAY BOOKSHOP" data-ar="مكتبتك لكل يوم">YOUR EVERYDAY BOOKSHOP</p>
+ <h1 data-en="A world of ideas, delivered to you." data-ar="عالم من المعرفة، يصلك أينما كنت.">A world of ideas, delivered to you.</h1>
+ <p data-en="Discover books, stationery and school essentials for curious minds." data-ar="اكتشف الكتب والقرطاسية والمستلزمات المدرسية لكل العقول الشغوفة.">Discover books, stationery and school essentials for curious minds.</p>
+ <a class="primary" href="#books" data-en="Explore the collection" data-ar="تصفح المنتجات">Explore the collection</a></div>
+ <div class="hero-art"><div class="sun"></div><div class="book book-one"></div><div class="book book-two"></div><div class="book book-three"></div><div class="plant">✳</div></div>
+</section>
+<section class="section" id="books"><div class="section-head"><div><p class="eyebrow" data-en="THE COLLECTION" data-ar="المجموعة">THE COLLECTION</p><h2 data-en="Find your next favourite" data-ar="اعثر على كتابك القادم">Find your next favourite</h2></div><input id="search" type="search" placeholder="Search books and supplies" aria-label="Search"></div>
+ <div class="filters"><button class="filter active" data-category="All" data-en="All" data-ar="الكل">All</button><button class="filter" data-category="Books" data-en="Books" data-ar="كتب">Books</button><button class="filter" data-category="Stationery" data-en="Stationery" data-ar="قرطاسية">Stationery</button><button class="filter" data-category="School" data-en="School supplies" data-ar="مستلزمات مدرسية">School supplies</button></div>
+ <div id="products" class="products"></div>
+</section>
+<section class="feature" id="about"><div><p class="eyebrow" data-en="MADE FOR LEARNING" data-ar="مصممة للتعلم">MADE FOR LEARNING</p><h2 data-en="Good things begin with a page." data-ar="كل بداية جميلة تبدأ بصفحة.">Good things begin with a page.</h2></div><p data-en="From your next great read to the tools that make learning easier, ServBookshop brings useful things together in one welcoming place." data-ar="من قراءتك القادمة إلى الأدوات التي تجعل التعلم أسهل، تجمع سيرف بوكشوب كل ما تحتاجه في مكان واحد.">From your next great read to the tools that make learning easier, ServBookshop brings useful things together in one welcoming place.</p></section>
+<section class="section tracking" id="orders"><div><p class="eyebrow" data-en="HERE TO HELP" data-ar="نحن هنا لمساعدتك">HERE TO HELP</p><h2 data-en="Track your order" data-ar="تتبع طلبك">Track your order</h2><p data-en="Enter your order number to check its status." data-ar="أدخل رقم الطلب لمعرفة حالته.">Enter your order number to check its status.</p></div><form id="trackForm"><input id="orderNumber" placeholder="Order number" required><button class="primary" type="submit" data-en="Check status" data-ar="تحقق من الحالة">Check status</button><p id="trackResult" role="status"></p></form></section>
+</main>
+<footer><a class="brand" href="#"><span class="brand-mark">S</span>ServBookshop</a><p>© <span id="year"></span> ServBookshop. <span data-en="Made for curious minds." data-ar="صُنعت للعقول الشغوفة.">Made for curious minds.</span></p><a id="whatsappLink" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a></footer>
+<aside id="cartPanel" class="cart-panel" aria-label="Shopping cart"><div class="cart-head"><h3 data-en="Your cart" data-ar="سلة التسوق">Your cart</h3><button id="closeCart" class="quiet">✕</button></div><div id="cartItems"></div><div class="cart-total"><span data-en="Total" data-ar="الإجمالي">Total</span><b id="cartTotal">$0.00</b></div><input id="coupon" placeholder="Discount code"><button id="applyCoupon" class="quiet">Apply coupon</button><button id="checkout" class="primary full" data-en="Order on WhatsApp" data-ar="اطلب عبر واتساب">Order on WhatsApp</button><p class="hint" data-en="Demo storefront: connect Supabase settings to enable live accounts, orders and inventory." data-ar="نسخة تجريبية: اربط إعدادات Supabase لتفعيل الحسابات والطلبات والمخزون.">Demo storefront: connect Supabase settings to enable live accounts, orders and inventory.</p></aside>
+<div id="toast" class="toast" role="status"></div>
+<script src="app.js"></script>
+</body></html>
